@@ -20,7 +20,7 @@ define('BIND_MODULE','Admin');
  * 应用目录设置
  * 安全期间，建议安装调试完成后移动到非WEB目录
  */
-define ( 'APP_PATH', './Application/' );
+define ( 'APP_PATH', PROJECT_PATH.'Application/' );
 
 if(!is_file(APP_PATH . 'User/Conf/config.php')){
 	header('Location: ./install.php');
@@ -31,10 +31,16 @@ if(!is_file(APP_PATH . 'User/Conf/config.php')){
  * 缓存目录设置
  * 此目录必须可写，建议移动到非WEB目录
  */
-define ( 'RUNTIME_PATH', './Runtime/' );
+define ( 'RUNTIME_PATH', PROJECT_PATH.'Runtime/' );
+
+/**
+ * 插件目录设置
+ * 此目录必须可写，建议移动到非WEB目录
+ */
+define ( 'ONETHINK_ADDON_PATH', PROJECT_PATH.'Addons/' );
 
 /**
  * 引入核心入口
  * ThinkPHP亦可移动到WEB以外的目录
  */
-require './ThinkPHP/ThinkPHP.php';
+require PROJECT_PATH.'ThinkPHP/ThinkPHP.php';
