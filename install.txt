@@ -1,1 +1,2 @@
 
+将 WEB_DIR_GUIDE 目录下的三个文件 放在WEB 目录下,除了PUBLIC 其它均可放置在定义的PROJECT_PATH 非WEB目录下。
