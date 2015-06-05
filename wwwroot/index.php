@@ -25,7 +25,7 @@ define ( 'APP_PATH', PROJECT_PATH.'Application/' );
  * 若程序还未安装,跳转到安装页面
  * 合并入口文件,加入是否绑定模块判断
  */
-defined('BIND_MODULE') or define('BIND_MODULE','');
+defined('BIND_MODULE') or define('BIND_MODULE','Home');
 if(BIND_MODULE!='Install'&&!is_file(APP_PATH . 'User/Conf/config.php')){
 	header('Location: ./install.php');
 	exit;
