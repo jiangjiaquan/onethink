@@ -21,7 +21,12 @@ define('APP_DEBUG', true );
  */
 define ( 'APP_PATH', PROJECT_PATH.'Application/' );
 
-if(!is_file(APP_PATH . 'User/Conf/config.php')){
+/**
+ * 若程序还未安装,跳转到安装页面
+ * 合并入口文件,加入是否绑定模块判断
+ */
+defined('BIND_MODULE') or define('BIND_MODULE','');
+if(BIND_MODULE!='Install'&&!is_file(APP_PATH . 'User/Conf/config.php')){
 	header('Location: ./install.php');
 	exit;
 }
