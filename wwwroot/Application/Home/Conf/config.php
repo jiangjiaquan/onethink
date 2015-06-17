@@ -30,7 +30,7 @@ return array(
         'exts'     => 'jpg,gif,png,jpeg,zip,rar,tar,gz,7z,doc,docx,txt,xml', //允许上传的文件后缀
         'autoSub'  => true, //自动子目录保存文件
         'subName'  => array('date', 'Y-m-d'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-        'rootPath' => './Uploads/Download/', //保存根路径
+        'rootPath' => PROJECT_PATH.'Uploads/Download/', //保存根路径
         'savePath' => '', //保存路径
         'saveName' => array('uniqid', ''), //上传文件命名规则，[0]-函数名，[1]-参数，多个参数使用数组
         'saveExt'  => '', //文件保存后缀，空则使用原后缀
@@ -46,7 +46,7 @@ return array(
         'exts'     => 'jpg,gif,png,jpeg', //允许上传的文件后缀
         'autoSub'  => true, //自动子目录保存文件
         'subName'  => array('date', 'Y-m-d'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-        'rootPath' => './Uploads/Editor/', //保存根路径
+        'rootPath' => PROJECT_PATH.'Uploads/Editor/', //保存根路径
         'savePath' => '', //保存路径
         'saveName' => array('uniqid', ''), //上传文件命名规则，[0]-函数名，[1]-参数，多个参数使用数组
         'saveExt'  => '', //文件保存后缀，空则使用原后缀
@@ -86,7 +86,7 @@ return array(
         'exts'     => 'jpg,gif,png,jpeg,zip,rar,tar,gz,7z,doc,docx,txt,xml', //允许上传的文件后缀
         'autoSub'  => true, //自动子目录保存文件
         'subName'  => array('date', 'Y-m-d'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-        'rootPath' => './Uploads/Attachment/', //保存根路径
+        'rootPath' => PROJECT_PATH.'Uploads/Attachment/', //保存根路径
         'savePath' => '', //保存路径
         'saveName' => array('uniqid', ''), //上传文件命名规则，[0]-函数名，[1]-参数，多个参数使用数组
         'saveExt'  => '', //文件保存后缀，空则使用原后缀
