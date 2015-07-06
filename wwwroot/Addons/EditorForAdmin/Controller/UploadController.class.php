@@ -26,7 +26,7 @@ class UploadController extends AddonsController{
 		$info   = $this->uploader->upload($_FILES);
 		if($info){
 			$url = C('EDITOR_UPLOAD.rootPath').$info['imgFile']['savepath'].$info['imgFile']['savename'];
-			$url = str_replace(PROJECT_PATH, '', $url);
+			$url = str_replace(PROJECT_PATH.'Uploads/', '', $url);
 			$info['fullpath'] = U('/File/readFile').'&fullpath='.$url;
 		}
 		session('upload_error', $this->uploader->getError());
