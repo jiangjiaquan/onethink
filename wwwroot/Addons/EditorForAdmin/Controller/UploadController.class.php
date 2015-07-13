@@ -27,7 +27,9 @@ class UploadController extends AddonsController{
 		if($info){
 			$url = C('EDITOR_UPLOAD.rootPath').$info['imgFile']['savepath'].$info['imgFile']['savename'];
 			$url = str_replace(PROJECT_PATH.'Uploads/', '', $url);
-			$info['fullpath'] = U('/File/readFile').'&fullpath='.$url;
+			$url = U('/File/readFile').'&fullpath='.$url;
+			// admin.php 替换成 index.php 否则前台展示会有问题
+			$info['fullpath'] = str_replace('admin.php','index.php',$url);
 		}
 		session('upload_error', $this->uploader->getError());
 		return $info;
