@@ -91,19 +91,27 @@ class FileController extends AdminController {
       */
     public function readFile( $filename = ''){
 	$filename = I('fullpath');
-	// 限制只能读取Uploads目录下的文件
-	$filename = PROJECT_PATH.'Uploads/'.$filename;
+	// 文件名进行正则过滤,不能有返回目录操作
+	$reg1 = '/\.{2,}/';
+	if(preg_match($reg1, $filename)){
+            $filename = PROJECT_PATH.'logo.png';
+	}else{
+	    // 限制只能读取Uploads目录下的文件
+	    $filename = PROJECT_PATH.'Uploads/'.$filename;
+	}
+		
 	// 取图片类型
 	$type = end(preg_split('/\./', $filename));
 	if(is_file($filename)){
-		header('Content-Length:'.filesize($filename));
-		header('Content-Type:image/'.$type);
-		readfile($filename);
+	    header('Content-Length:'.filesize($filename));
+	    header('Content-Type:image/'.$type);
+            readfile($filename);
 	}else{
-		send_http_status(404);
-// 		header('Content-Length:'.filesize($filename));
-// 		header('Content-Type:image/'.$type);
-// 		readfile('no.jpg');
+	    send_http_status(404);
+	    $filename = PROJECT_PATH.'logo.png';
+	    header('Content-Length:'.filesize($filename));
+	    header('Content-Type:image/'.$type);
+	    readfile($filename);
 	}
     }
 }
